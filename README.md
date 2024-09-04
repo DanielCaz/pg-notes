@@ -28,10 +28,11 @@ First, copy the `.env.example` file to `.env` and fill in the required fields.
 DATABASE_URL="postgresql://user:password@host:5432/dbname" # Or whatever database you are using
 ```
 
-Then, perform a migration to create the tables in the database.
+Then, perform a migration to create the tables in the database and generate the Prisma client:
 
 ```bash
 npx prisma db push
+npx prisma generate
 ```
 
 Finally, run the development server:
