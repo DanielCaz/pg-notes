@@ -4,11 +4,19 @@ A simple note taking app made with Next.js, shadcn and Prisma.
 
 It has PG in the name because I used postgresql as the database but now that I think about it, this project works with any database that Prisma supports...
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+  - [Without Docker](#without-docker)
+  - [With Docker](#with-docker)
+
 ## Prerequisites
 
 - Node.js
 - npm
 - PostgreSQL (with a database already created)
+- Docker (optional)
 
 ## Getting Started
 
