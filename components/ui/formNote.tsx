@@ -56,7 +56,7 @@ const FormNote = ({ note }: Props) => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="grid gap-8 rounded-md p-8 shadow-md"
+        className="grid gap-8 rounded-md border p-8"
       >
         <h2 className="text-xl font-semibold">
           {note ? "Edit Note" : "Create Note"}
