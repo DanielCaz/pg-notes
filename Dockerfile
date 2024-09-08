@@ -18,10 +18,13 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
+ARG DATABASE_URL
+ENV DATABASE_URL=$DATABASE_URL
+
 RUN \
-    if [ -f package-lock.json ]; then npx prisma generate && npx prisma db push && npm run build; \
-    elif [ -f yarn.lock ]; then yarn prisma generate && yarn prisma db push && yarn build; \
-    elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm prisma generate && pnpm prisma db push && pnpm run build; \
+    if [ -f package-lock.json ]; then npx prisma db push && npx prisma generate && npm run build; \
+    elif [ -f yarn.lock ]; then yarn prisma db push && yarn prisma generate && yarn build; \
+    elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm prisma db push && pnpm prisma generate && pnpm run build; \
     else echo "Lockfile not found." && exit 1; \
     fi
 
